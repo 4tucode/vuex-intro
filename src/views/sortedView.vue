@@ -1,11 +1,15 @@
 <template>
   <section>
-
+    {{ ordenarUsuarios }}
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-    name:'sortedView'
+    name:'sortedView',
+    computed:{
+        ...mapGetters(['ordenarUsuarios'])
+    }
 }
 </script>

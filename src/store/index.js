@@ -5,6 +5,15 @@ export default createStore({
     users: [], // Almacén para los usuarios
   },
   getters: {
+    allUsers(state){
+      return state.users; // Devuelve todos los usuarios almacénados
+    },
+    ordenarUsuarios(state){
+      return [...state.users].sort((a, b) => a.name.localeCompare(b.name)); // Ordena los usuarios alfabéticamente
+    },
+    filtrarEmails(state){
+      return state.users.filter(user => user.email.endsWith(".net"))
+    }
   },
   mutations: {
     SET_USERS(state, users) {
